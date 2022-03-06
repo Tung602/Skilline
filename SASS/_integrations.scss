@@ -1,0 +1,105 @@
+@import "./mixin";
+
+.integrations {
+  &-container {
+    width: 100%;
+    max-width: 1490px;
+    padding: 0 15px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 200px;
+    margin-bottom: 170px;
+  }
+  &-img {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 500px;
+    gap: 100px;
+    &-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &-main {
+    width: 100%;
+    max-width: 680px;
+  }
+  &-title {
+    max-width: 480px;
+    font-family: $secondary-font;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: calc(57 / 36);
+    margin-bottom: 30px;
+    color: $secondary-color;
+  }
+  &-desc {
+    font-family: $secondary-font;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: calc(43 / 24);
+    margin-bottom: 44px;
+  }
+  &-btn {
+    padding: 20px 42px;
+  }
+}
+
+// ============================= Responsive =============================
+
+@include laptopL {
+  .integrations-container {
+    gap: 100px;
+  }
+}
+
+@include laptop {
+  .integrations-container {
+    gap: 50px;
+  }
+  .integrations-img {
+    gap: 50px;
+  }
+}
+
+@include tablet {
+  .integrations-container {
+    flex-direction: column-reverse;
+    gap: 50px;
+  }
+  .integrations-img {
+    max-width: 100%;
+    column-gap: 100px;
+    row-gap: 50px;
+  }
+}
+
+@include smartphone {
+  .integrations-container {
+    gap: 30px;
+    margin-bottom: 100px;
+  }
+  .integrations-img {
+    gap: 30px;
+  }
+  .integrations-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .integrations-title {
+    font-size: 30px;
+    text-align: center;
+  }
+  .integrations-desc {
+    font-size: 16px;
+    text-align: center;
+  }
+  .integrations-btn {
+    font-size: 20px;
+    padding: 15px 25px;
+  }
+}

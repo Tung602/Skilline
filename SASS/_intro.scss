@@ -1,0 +1,149 @@
+@import "./mixin";
+
+.intro {
+  &-container {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 160px;
+    margin-bottom: 158px;
+  }
+  &-heading {
+    max-width: 837px;
+  }
+  &-title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: calc(65 / 36);
+    text-align: center;
+    margin-bottom: 20px;
+    color: $secondary-color;
+  }
+  &-desc {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: calc(43 / 24);
+    text-align: center;
+  }
+  &-main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+  }
+  &-card {
+    width: 100%;
+    max-width: 450px;
+    height: 430px;
+    padding: 112px 54px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+    box-shadow: 0px 10px 60px rgba(38, 45, 118, 0.08);
+    border-radius: 20px;
+    & .card-img {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 100rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0px 16px 40px rgba(37, 44, 113, 0.1);
+    }
+    & .card-img1 {
+      background-color: $secondary-color;
+    }
+    .card-img2 {
+      background-color: $primary-color;
+    }
+    .card-img3 {
+      background-color: $third-color;
+    }
+    & .card-title {
+      font-size: 30px;
+      font-weight: 500;
+      line-height: calc(45 / 30);
+      color: $secondary-color;
+      text-align: center;
+    }
+    & .card-desc {
+      font-size: 20px;
+      line-height: calc(36 / 20);
+      text-align: center;
+    }
+  }
+}
+
+// ============================= Responsive =============================
+
+@media screen and (max-width: 1500px) {
+  .intro-card {
+    max-width: 380px;
+    padding: 80px 40px 40px;
+  }
+  .card {
+    &-title {
+      font-size: 25px !important;
+    }
+  }
+  .intro-card .card-img {
+    width: 90px;
+    height: 90px;
+  }
+}
+@include laptopL {
+
+}
+
+@include laptop {
+  .intro-container{
+    margin-bottom: 80px;
+    gap: 100px;
+  }
+  .intro-card{
+    justify-content: space-evenly;
+  }
+  .intro-main {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+  }
+}
+
+@include tablet {
+}
+
+@include smartphone {
+  .intro-title{
+    font-size: 30px;
+    line-height: 1.5;
+  }
+  .intro-desc{
+    font-size: 16px;
+  }
+  .intro-card{
+    padding: 50px 40px 40px;
+    height: auto;
+    gap: 40px;
+  }
+  .card {
+    &-title {
+      font-size: 20px !important;
+      margin-top: 20px;
+    }
+    &-desc{
+      font-size: 16px !important;
+    }
+  }
+}

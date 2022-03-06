@@ -1,0 +1,111 @@
+@import "./mixin";
+
+.intro3 {
+  &-container {
+    width: 100%;
+    max-width: 1580px;
+    padding: 0 15px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 90px;
+    margin-bottom: 160px;
+  }
+  &-main {
+    width: 100%;
+    max-width: 700px;
+  }
+  &-title {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: calc(57 / 36);
+    color: $secondary-color;
+    margin-bottom: 30px;
+  }
+  &-desc {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: calc(43 / 24);
+    margin-bottom: 30px;
+  }
+  &-link {
+    text-decoration: underline;
+    color: $gray-light;
+    font-size: 22px;
+    font-weight: 400;
+  }
+  &-img {
+    position: relative;
+    display: flex;
+  }
+  &-play {
+    width: 70px;
+    height: 70px;
+    border-radius: 100rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 8px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+}
+
+
+
+// ============================= Responsive =============================
+
+
+@include laptopL {
+  .intro3-container{
+    gap: 20px;
+  }
+  .intro3-main{
+    max-width: 550px;
+  }
+}
+
+@include laptop {
+  .intro3-container{
+    margin-bottom: 100px;
+  }
+  .intro3-title{
+    font-size: 30px;
+  }
+  .intro3-desc{
+    font-size: 20px;
+  }
+}
+
+@include tablet {
+  .intro3-container{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+  }
+  .intro3-img{
+    align-self: center;
+  }
+}
+
+@include smartphone {
+  .intro3-container{
+    margin-bottom: 60px;
+  }
+  .intro3-title{
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  .intro3-desc{
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .intro3-link{
+    font-size: 18px;
+  }
+}

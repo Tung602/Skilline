@@ -1,0 +1,150 @@
+@import "./mixin";
+
+.intro2 {
+  &-container {
+    width: 100%;
+    max-width: 1330px;
+    padding: 0 15px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 160px;
+  }
+  &-heading {
+    width: 100%;
+    max-width: 1065px;
+  }
+  &-title {
+    font-size: 44px;
+    font-weight: 600;
+    line-height: calc(80 / 44);
+    text-align: center;
+    color: $secondary-color;
+    margin-bottom: 20px;
+  }
+  &-desc {
+    font-size: 24px;
+    line-height: calc(44 / 24);
+    text-align: center;
+  }
+  &-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+  }
+  &-card {
+    // width: 100%;
+    object-fit: cover;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    background: rgba(23, 27, 65, 0.5);
+    border: 1px solid #000000;
+    border-radius: 20px; 
+  }
+  &-img{
+      display: flex;
+  }
+  &-img img {
+    filter: opacity(80%);
+  }
+  &-action {
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & p {
+      font-size: 32px;
+      font-weight: 600;
+      line-height: calc(48 / 32);
+      text-align: center;
+      color: #fff;
+      margin-bottom: 18px;
+    }
+  }
+  &-btn {
+    padding: 24px 38px;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: calc(33 / 22);
+    transition: background-color 0.2s linear;
+    &:hover {
+      background-color: rgba(35, 189, 238, 0.9);
+      border-color: transparent;
+    }
+  }
+}
+
+
+// ============================= Responsive =============================
+
+
+@media screen and (max-width: 1320px) {
+  .intro2-main{
+    gap: 30px;
+  }
+}
+@include laptopL {
+
+}
+
+@include laptop {
+  .intro2-container{
+    margin-bottom: 120px;
+  }
+  .intro2-desc{
+    font-size: 20px;
+  }
+  .intro2-main{
+    gap: 30px;
+  }
+  .intro2-action{
+    & p{
+      font-size: 25px;
+    }
+    & .intro2-btn{
+      font-size: 18px;
+      padding: 15px 25px;
+    }
+  }
+}
+
+@include tablet {
+  .intro2-container{
+    margin-bottom: 80px;
+    gap: 40px;
+  }
+  .intro2-action{
+    & p{
+      font-size: 20px;
+    }
+    & .intro2-btn{
+      font-size: 16px;
+      padding: 15px 25px;
+    }
+  }
+}
+
+@include smartphone {
+  .intro2-main{
+    flex-wrap: wrap;
+  }
+  .intro2-title{
+    font-size: 30px;
+  }
+  .intro2-desc{
+    font-size: 16px;
+  }
+}

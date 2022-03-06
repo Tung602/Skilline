@@ -1,0 +1,234 @@
+@import "./mixin";
+
+.testimonials {
+  &-container {
+    width: 100%;
+    max-width: 1550px;
+    padding: 0 15px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 150px;
+  }
+  &-main {
+    width: 100%;
+    max-width: 578px;
+  }
+  &-caption {
+    font-family: $primary-font;
+    margin-bottom: 32px;
+  }
+  &-title {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: calc(81 / 60);
+    margin-bottom: 30px;
+  }
+  &-desc {
+    font-size: 26px;
+    font-weight: 400;
+    line-height: calc(41 / 26);
+    margin-bottom: 30px;
+    &:last-of-type {
+      margin-bottom: 43px;
+    }
+  }
+  &-btn {
+    max-width: 330px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    padding: 0;
+    padding-left: 38px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    position: relative;
+    &-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 100rem;
+      border: 1px solid $primary-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(50%, -50%);
+      background-color: #fff;
+    }
+  }
+  &-avatar {
+    width: 780px;
+    position: relative;
+  }
+  &-img {
+    position: relative;
+    max-width: 568px;
+    & img{
+        border-radius: 20px;
+    }
+  }
+  &-girl{
+    position: relative;
+  }
+  &-more {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 100rem;
+    background: #ffffff;
+    box-shadow: 0px 4px 60px rgba(41, 44, 124, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(50%, -50%);
+    cursor: pointer;
+  }
+  &-card {
+    position: absolute;
+    bottom: -10%;
+    right: -30%;
+    padding-top: 40px;
+    padding-left: 87px;
+    padding-right: 60px;  
+    border-left: 14px solid #f67766;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 2px 4px 60px rgba(41, 44, 124, 0.1);
+    &-desc {
+      max-width: 510px;
+      font-family: $secondary-font;
+      font-size: 22px;
+      line-height: calc(39 / 22);
+      margin-bottom: 30px;
+    }
+    &-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+    &-name {
+      font-family: $secondary-font;
+      font-size: 26px;
+      font-weight: 600;
+    }
+    &-rating {
+      max-width: 550px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    &-review {
+      font-size: 18px;
+      color: #80819a;
+    }
+  }
+}
+
+// ============================= Responsive =============================
+
+@include laptopL{
+  .testimonials-container{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+  .testimonials-main{
+    max-width: 80%;
+  }
+}
+
+@include laptop{
+  
+}
+
+@include tablet{
+  .testimonials-title{
+    font-size: 40px;
+  }
+  .testimonials-desc{
+    font-size: 22px;
+  }
+  .testimonials-avatar{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    padding: 0 20px;
+  }
+  .testimonials-card{
+    position: static;
+    padding: 30px 15px;
+    margin-top: 30px;
+    &-desc{
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    &-footer{
+      margin-bottom: 0;
+    }
+    &-name{
+      font-size: 20px;
+    }
+    &-review{
+      font-size: 14px;
+    }
+  }
+}
+
+@include smartphone {
+  .testimonials-container{
+    margin-bottom: 80px;
+  }
+  .testimonials-title{
+    font-size: 30px;
+    text-align: center;
+  }
+  .testimonials-desc{
+    font-size: 16px;
+    text-align: center;
+  }
+  .testimonials-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .testimonials-btn{
+    font-size: 18px;
+    height: 60px;
+    padding-left: 30px;
+    padding-right: 40px;
+    transform: translateX(-15px);
+    &-circle{
+      height: 60px;
+      width: 60px;
+    }
+  }.testimonials-more{
+    width: 60px;
+    height: 60px;
+  }
+  .testimonials-card{
+    &-desc{
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    &-footer{
+      margin-bottom: 0;
+    }
+    &-name{
+      font-size: 18px;
+    }
+    &-review{
+      font-size: 12px;
+    }
+  }
+}
